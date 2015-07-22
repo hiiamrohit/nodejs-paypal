@@ -1,6 +1,13 @@
+/*
+ * Author: Rohit Kumar
+ * Date: 22-07-2015
+ * App Name: Iamchat
+ * Website: iamrohit.in
+ * Description: Chat application using nodejs and socket.io
+ */
 var express    = require("express");
 var paypal = require('paypal-rest-sdk');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({
