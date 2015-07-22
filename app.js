@@ -3,7 +3,7 @@
  * Date: 22-07-2015
  * App Name: Iamchat
  * Website: iamrohit.in
- * Description: Chat application using nodejs and socket.io
+ * Description: Program to Integrate paypal payment gateway in nodejs
  */
 var express    = require("express");
 var paypal = require('paypal-rest-sdk');
