@@ -5,10 +5,12 @@
  * Website: iamrohit.in
  * Description: Program to Integrate paypal payment gateway in nodejs
  */
+var http=require('http');
 var express    = require("express");
 var paypal = require('paypal-rest-sdk');
 var bodyParser = require('body-parser');
 var app = express();
+var port = Number(process.env.PORT || 5000);
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({
   extended: true
@@ -22,8 +24,8 @@ var config = {
   "api" : {
     "host" : "api.sandbox.paypal.com",
     "port" : "",            
-    "client_id" : "AQ0HGpP-Ezb95BfHEbveAUwbEJzCHSH7broTXgvwBbClO9ESNpaUYNo6ke0edj7j4Du2wOKhWWaMNIdj",  // your paypal application client id
-    "client_secret" : "EJQpAFRPangtsGDTIvHnX2VTAwIIwLim4gV3v0Nty3ierH5ICK_-EK2ExmsZbPk9afooe1HM-Eg8cPDP" // your paypal application secret id
+    "client_id" : "YOUR TEST CLIENT ID",  // your paypal application client id
+    "client_secret" : "YOUR TEST CLIENT SECRET" // your paypal application secret id
   }
 }
  
@@ -87,5 +89,7 @@ app.post('/paynow', function(req, res) {
 });
 
 
-console.log("Listening  on 5000");
-app.listen(5000);
+// Starting server
+var server = http.createServer(app).listen(port, function() {
+console.log("Listening on " + port);
+});
