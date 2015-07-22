@@ -15,8 +15,8 @@ var config = {
   "api" : {
     "host" : "api.sandbox.paypal.com",
     "port" : "",            
-    "client_id" : "AQ0HGpP-Ezb95BfHEbveAUwbEJzCHSH7broTXgvwBbClO9ESNpaUYNo6ke0edj7j4Du2wOKhWWaMNIdj",
-    "client_secret" : "EJQpAFRPangtsGDTIvHnX2VTAwIIwLim4gV3v0Nty3ierH5ICK_-EK2ExmsZbPk9afooe1HM-Eg8cPDP"
+    "client_id" : "YOUR TEST CLIENT ID",  // your paypal application client id
+    "client_secret" : "YOUR TEST CLIENT SECRET" // your paypal application secret id
   }
 }
  
@@ -58,10 +58,6 @@ app.post('/paynow', function(req, res) {
     "description": req.body.description
   }]
 };
-
-console.log(req.body.amount);
-console.log(req.body.currency);
-console.log(req.body.description);
 
   paypal.payment.create(payment, function (error, payment) {
   if (error) {
