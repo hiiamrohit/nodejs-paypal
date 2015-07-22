@@ -1,7 +1,7 @@
 /*
  * Author: Rohit Kumar
  * Date: 22-07-2015
- * App Name: Iamchat
+ * App Name: Nodejs-Paypal
  * Website: iamrohit.in
  * Description: Program to Integrate paypal payment gateway in nodejs
  */
